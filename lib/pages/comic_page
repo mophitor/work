@@ -1,0 +1,33 @@
+import 'package:flutter/material.dart';
+
+class DescriptionScreen extends StatelessWidget {
+  final String comic;
+  final String image;
+
+  const DescriptionScreen({Key? key, required this.comic, required this.image}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(comic),
+      ),
+      body: SingleChildScrollView(
+          child: Container(
+            color: Colors.white,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Image.network(image, fit: BoxFit.cover),
+                Flexible(child: Text(
+                  'Описание для $comic, Описание для $comic, Описание для $comic, Описание для $comic',
+                  style: const TextStyle(fontSize: 16),
+                ),
+                ),
+              ],
+            ),
+          )
+      ),
+    );
+  }
+}
