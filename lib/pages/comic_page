@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:login/pages/WelcomeScreen.dart';
 
 class DescriptionScreen extends StatelessWidget {
   final String comic;
   final String image;
+  final String page;
 
-  const DescriptionScreen({Key? key, required this.comic, required this.image}) : super(key: key);
+  const DescriptionScreen(
+      {super.key, required this.comic, required this.image, required this.page});
 
   @override
   Widget build(BuildContext context) {
@@ -12,20 +15,30 @@ class DescriptionScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(comic),
       ),
-      body: SingleChildScrollView(
-          child: Container(
-            color: Colors.white,
-            child: Row(
+      body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Image.network(image, fit: BoxFit.cover),
-                Flexible(child: Text(
-                  'Описание для $comic, Описание для $comic, Описание для $comic, Описание для $comic',
-                  style: const TextStyle(fontSize: 16),
+                Text(
+                    'Название $comic'
                 ),
+                const SizedBox(height: 10),
+                const SizedBox(height: 20),
+                Expanded(
+                  child: PageView.builder(
+                      itemCount: page.length,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image.network(page as String, fit: BoxFit.cover
+
+                          ),
+                        );
+                      }
+                  ),
                 ),
-              ],
-            ),
+              ]
           )
       ),
     );
