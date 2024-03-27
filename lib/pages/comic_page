@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Comic {
@@ -40,9 +41,24 @@ class DescriptionScreen extends StatelessWidget {
                         }
                     ),
                   ),
-                  Text(
-                    'Описание $comic и подробная информация о нем'
+                  ConstrainedBox(
+                      constraints: const BoxConstraints(maxHeight: 50),
+                    child: ListView(
+                      children: [
+                        Text(
+                            'Описание $comic и подробная информация о нем, Описание $comic и подробная информация о нем, Описание $comic и подробная информация о нем, Описание $comic и подробная информация о нем, Описание $comic и подробная информация о нем, '
+                        ),
+                      ],
+                    ),
                   ),
+                  Container(
+                    height: 2,
+                    width: 100,
+                    color: CupertinoColors.systemGrey,
+                  ),
+                  Text(
+                    'Подробности о $comic и другая информация, Подробности о $comic и другая информация, Подробности о $comic и другая информация, Подробности о $comic и другая информация, '
+                  )
                 ]
             )
       ),
