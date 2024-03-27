@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:login/pages/WelcomeScreen.dart';
 
 class Comic {
   final List<String> images;
@@ -11,9 +12,10 @@ class Comic {
 class DescriptionScreen extends StatelessWidget {
   final String comic;
   final String image;
+  final Comic images;
 
   const DescriptionScreen(
-      {super.key, required this.comic, required this.image});
+      {super.key, required this.comic, required this.image, required this.images});
 
   @override
   Widget build(BuildContext context) {
