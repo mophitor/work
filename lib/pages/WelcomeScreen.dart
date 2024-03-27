@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login/pages/comic_page.dart';
 
-class Comic {
-  final List<String> images;
-  Comic({required this.images});
-
-  get length => null;
-}
-
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 
@@ -22,6 +15,8 @@ class WelcomeScreen extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
+  get length => null;
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -35,18 +30,6 @@ class _MyHomePageState extends State<MyHomePage> {
     'https://avatars.mds.yandex.net/i?id=912800c24fe0bc9564c059fa4f846cee5d3f4488-9069085-images-thumbs&n=13',
     'https://avatars.mds.yandex.net/i?id=4be3e2bc2f50b31142a4c3819551651ed3391950-9461059-images-thumbs&n=13'
   ];
-  final List<Comic> pages = [
-    Comic(
-      images: ['https://avatars.mds.yandex.net/i?id=f5689c1c80e71febbe83e7aef9d3213ebaaeb7e7-9245471-images-thumbs&n=13',
-        'https://avatars.mds.yandex.net/i?id=9f0b30413fdb6d5a99a58c02ecee6ed5b2d01126-11004153-images-thumbs&n=13',
-        'https://avatars.mds.yandex.net/i?id=183473b024a8d13b0d43358c4581dbda-5910758-images-thumbs&n=13',
-        'https://avatars.mds.yandex.net/i?id=248fe9dfbdf04a7d0011d6ed84851ed6-5340221-images-thumbs&n=13',
-        'https://avatars.mds.yandex.net/i?id=234f7751e2e302430882374d16283cc635d43107-4578267-images-thumbs&n=13'],
-    ),
-    
-  ];
-
-  static get title => null;
 
   @override
   void initState() {
@@ -74,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DescriptionScreen(comic: comics[index], image: photo[index], page: pages[index]),
+                  builder: (context) => DescriptionScreen(image: photo[index], comic: comics[index]),
                 ),
               );
             },
@@ -113,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => DescriptionScreen(comic: comics[index], image: photo[index], page: pages[index]),
+                      builder: (context) => DescriptionScreen(image: photo[index], comic: comics[index]),
                     ),
                   );
                 },
