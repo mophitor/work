@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:login/pages/WelcomeScreen.dart';
 
 class Comic {
   final List<String> images;
@@ -23,15 +22,13 @@ class DescriptionScreen extends StatelessWidget {
       ),
       body: Padding(
             padding: const EdgeInsets.all(8),
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+            child: ListView(
                 children: <Widget>[
                   Text(
                       'Название $comic'
                   ),
-                  const SizedBox(height: 10),
-                  const SizedBox(height: 20),
-                  Expanded(
+                  ConstrainedBox(
+                    constraints: const BoxConstraints(maxHeight: 550),
                     child: PageView.builder(
                         itemCount: image.length,
                         itemBuilder: (context, index) {
@@ -42,6 +39,9 @@ class DescriptionScreen extends StatelessWidget {
                           );
                         }
                     ),
+                  ),
+                  Text(
+                    'Описание $comic и подробная информация о нем'
                   ),
                 ]
             )
