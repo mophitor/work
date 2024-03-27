@@ -30,6 +30,48 @@ class _MyHomePageState extends State<MyHomePage> {
     'https://avatars.mds.yandex.net/i?id=912800c24fe0bc9564c059fa4f846cee5d3f4488-9069085-images-thumbs&n=13',
     'https://avatars.mds.yandex.net/i?id=4be3e2bc2f50b31142a4c3819551651ed3391950-9461059-images-thumbs&n=13'
   ];
+  final List<Comic> pages = [
+    Comic(images: [
+        'https://avatars.mds.yandex.net/i?id=f5689c1c80e71febbe83e7aef9d3213ebaaeb7e7-9245471-images-thumbs&n=13',
+        'https://avatars.mds.yandex.net/i?id=e60419e26252c3da5bdc58c3ce0a5fba-6503757-images-thumbs&n=13',
+        'https://avatars.mds.yandex.net/i?id=265e784d802e1d94d6f3d35842cb2b2f701d2bde-11387523-images-thumbs&n=13',
+        'https://avatars.mds.yandex.net/i?id=912800c24fe0bc9564c059fa4f846cee5d3f4488-9069085-images-thumbs&n=13',
+        'https://avatars.mds.yandex.net/i?id=4be3e2bc2f50b31142a4c3819551651ed3391950-9461059-images-thumbs&n=13'
+        ]
+    ),
+    Comic(images: [
+      'https://avatars.mds.yandex.net/i?id=f5689c1c80e71febbe83e7aef9d3213ebaaeb7e7-9245471-images-thumbs&n=13',
+      'https://avatars.mds.yandex.net/i?id=e60419e26252c3da5bdc58c3ce0a5fba-6503757-images-thumbs&n=13',
+      'https://avatars.mds.yandex.net/i?id=265e784d802e1d94d6f3d35842cb2b2f701d2bde-11387523-images-thumbs&n=13',
+      'https://avatars.mds.yandex.net/i?id=912800c24fe0bc9564c059fa4f846cee5d3f4488-9069085-images-thumbs&n=13',
+      'https://avatars.mds.yandex.net/i?id=4be3e2bc2f50b31142a4c3819551651ed3391950-9461059-images-thumbs&n=13'
+    ]
+    ),
+    Comic(images: [
+      'https://avatars.mds.yandex.net/i?id=f5689c1c80e71febbe83e7aef9d3213ebaaeb7e7-9245471-images-thumbs&n=13',
+      'https://avatars.mds.yandex.net/i?id=e60419e26252c3da5bdc58c3ce0a5fba-6503757-images-thumbs&n=13',
+      'https://avatars.mds.yandex.net/i?id=265e784d802e1d94d6f3d35842cb2b2f701d2bde-11387523-images-thumbs&n=13',
+      'https://avatars.mds.yandex.net/i?id=912800c24fe0bc9564c059fa4f846cee5d3f4488-9069085-images-thumbs&n=13',
+      'https://avatars.mds.yandex.net/i?id=4be3e2bc2f50b31142a4c3819551651ed3391950-9461059-images-thumbs&n=13'
+    ]
+    ),
+    Comic(images: [
+      'https://avatars.mds.yandex.net/i?id=f5689c1c80e71febbe83e7aef9d3213ebaaeb7e7-9245471-images-thumbs&n=13',
+      'https://avatars.mds.yandex.net/i?id=e60419e26252c3da5bdc58c3ce0a5fba-6503757-images-thumbs&n=13',
+      'https://avatars.mds.yandex.net/i?id=265e784d802e1d94d6f3d35842cb2b2f701d2bde-11387523-images-thumbs&n=13',
+      'https://avatars.mds.yandex.net/i?id=912800c24fe0bc9564c059fa4f846cee5d3f4488-9069085-images-thumbs&n=13',
+      'https://avatars.mds.yandex.net/i?id=4be3e2bc2f50b31142a4c3819551651ed3391950-9461059-images-thumbs&n=13'
+    ]
+    ),
+    Comic(images: [
+      'https://avatars.mds.yandex.net/i?id=f5689c1c80e71febbe83e7aef9d3213ebaaeb7e7-9245471-images-thumbs&n=13',
+      'https://avatars.mds.yandex.net/i?id=e60419e26252c3da5bdc58c3ce0a5fba-6503757-images-thumbs&n=13',
+      'https://avatars.mds.yandex.net/i?id=265e784d802e1d94d6f3d35842cb2b2f701d2bde-11387523-images-thumbs&n=13',
+      'https://avatars.mds.yandex.net/i?id=912800c24fe0bc9564c059fa4f846cee5d3f4488-9069085-images-thumbs&n=13',
+      'https://avatars.mds.yandex.net/i?id=4be3e2bc2f50b31142a4c3819551651ed3391950-9461059-images-thumbs&n=13'
+    ]
+    ),
+  ];
 
   @override
   void initState() {
@@ -57,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DescriptionScreen(image: photo[index], comic: comics[index]),
+                  builder: (context) => DescriptionScreen(image: photo[index], comic: comics[index], images: pages[index]),
                 ),
               );
             },
@@ -96,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => DescriptionScreen(image: photo[index], comic: comics[index]),
+                      builder: (context) => DescriptionScreen(image: photo[index], comic: comics[index], images: pages[index]),
                     ),
                   );
                 },
